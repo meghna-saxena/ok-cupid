@@ -1,0 +1,41 @@
+.card {
+    border: 1px solid #eee;
+    box-shadow: 0 1px 1px #ccc;
+    width: 200px;
+    height: 250px;
+    padding: 20px;
+    display: inline-block;
+    margin: 10px;
+  }
+  
+  .btn-position {
+    margin-top: 20px;
+    text-align: right;
+  }
+  
+  .action-btn {
+      background-color: rgb(231, 109, 87);
+      border: none;
+      outline: none;
+      color: white;
+      text-align: center;
+      text-decoration: none;
+      text-transform: capitalize;
+      display: inline-block;
+      font-size: 16px;
+      margin: 4px 2px;
+      cursor: pointer;
+      padding: 14px 60px;
+      border-radius: 2px;
+      width: 170px;
+  }
+  
+  .action-btn:hover {
+    background-color: rgb(238, 123, 108);
+  }
+
+  .main-img {
+    width: 200px;
+    height: 180px;
+    border: 0;
+  }

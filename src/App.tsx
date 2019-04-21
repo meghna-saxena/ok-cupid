@@ -1,16 +1,13 @@
-import React, { Component } from 'react';
+import * as React from 'react';
+import Home from './components/pages/Home';
 import './App.css';
 
-class App extends Component {
-  render() {
+export default class App extends React.Component {
+  public render() {
     return (
       <div className="App">
-        <header className="App-header">
-         Tinder!
-        </header>
+        <Home />
       </div>
     );
   }
 }
-
-export default App;
