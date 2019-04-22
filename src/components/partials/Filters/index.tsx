@@ -1,6 +1,6 @@
 import * as React from 'react';
-import Radio from '../RadioButton';
-import RangePicker from '../RangePicker';
+import Radio from '../../common/RadioButton';
+import RangePicker from '../../common/RangePicker';
 import './Filters.css';
 
 interface FiltersProps {

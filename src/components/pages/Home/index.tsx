@@ -1,6 +1,6 @@
 import * as React from 'react';
-import List from '../../common/List';
-import Filters from '../../common/Filters';
+import List from '../../partials/List';
+import Filters from '../../partials/Filters';
 import Header from '../../common/Header';
 import './Home.css';
 

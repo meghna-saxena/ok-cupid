@@ -1,5 +1,5 @@
 import * as React from 'react';
-import Card from '../Card';
+import Card from '../../common/Card';
 import NoPhotoUser from '../../../images/no-photo.png';
 import './List.css';
 import data from '../../../vendors/data.json';
