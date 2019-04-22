@@ -1,0 +1,10 @@
+.custom-btn.ant-btn-primary  {
+    background-color: rgb(201, 89, 89);
+    outline: none;
+    /* display: flex; */
+    /* align-items: flex-end; */
+    float: right;
+    margin-right: 80px;
+    margin-top: 10px;
+    border: none;
+}
