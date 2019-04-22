@@ -4,11 +4,12 @@ import './RangePicker.css';
 import { number } from 'prop-types';
 
 export interface RangePickerProps {
+    label: string,
     defaultValue: number | [number, number],
     unit: string,
     range: boolean,
     min?: number,
-    max?: number,   
+    max?: number,
 }
 
 export interface RangePickerState {
@@ -36,12 +37,13 @@ export default class RangePicker extends React.Component<RangePickerProps, Range
 
     public render() {
         const { disabled } = this.state;
-        const { defaultValue, range, min, max } = this.props;
+        const { label, defaultValue, range, min, max } = this.props;
 
         return (
-            <div>
+            <fieldset className="custom-radio-field">
+                <legend className="custom-legend">{label}</legend>
                 <Slider min={min} max={max} range={range} defaultValue={defaultValue} disabled={disabled} tipFormatter={this.formatter} />
-            </div>
+            </fieldset>
         );
     }
 }
