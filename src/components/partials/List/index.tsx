@@ -15,6 +15,7 @@ const List: React.FunctionComponent<ListProps> = (props) => {
     const age = el.age;
     const city = el.city.name;
     const religion = el.religion;
+    const favorite = el.favourite;
 
     return <Card
       key={displayName}
@@ -23,6 +24,7 @@ const List: React.FunctionComponent<ListProps> = (props) => {
       age={age}
       city={city}
       religion={religion}
+      favorite={favorite}
     />
   });
 
