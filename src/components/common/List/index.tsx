@@ -1,16 +1,14 @@
 import * as React from 'react';
-import { Card } from '../Card';
+import Card from '../Card';
+import NoPhotoUser from '../../../images/no-photo.png';
 import './List.css';
 import data from '../../../vendors/data.json';
-import NoPhotoUser from '../../../images/no-photo.png';
 
-export interface ListProps {
+interface ListProps {
 }
 
-export function List(props: ListProps) {
-
-  // const image = data.matches.filter(el => el)
-  const name = data.matches.map(el => {
+const List: React.FunctionComponent<ListProps> = (props) => {
+  const list = data.matches.map(el => {
     const displayName = el.display_name;
     const img = el.main_photo ? el.main_photo : NoPhotoUser;
 
@@ -19,8 +17,9 @@ export function List(props: ListProps) {
 
   return (
     <div className="list">
-      {/* <Card name={name} /> */}
-      {name}
+      {list}
     </div>
   );
-}
+};
+
+export default List;

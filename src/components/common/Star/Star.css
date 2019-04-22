@@ -43,8 +43,8 @@
 
 .star {
     position: relative;
-    
-    display: inline-block;
+    display: flex;
+    /* display: inline-block; */
     width: 0;
     height: 0;
     
@@ -57,7 +57,7 @@
     border-left:   .3em solid transparent;
   
     /* Controlls the size of the stars. */
-    font-size: 16px;
+    font-size: 12px;
     text-align: left;
     
 }

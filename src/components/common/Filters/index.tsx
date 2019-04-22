@@ -1,18 +1,17 @@
 import * as React from 'react';
-import { Radio } from '../RadioButton';
+import Radio from '../RadioButton';
 import RangePicker from '../RangePicker';
 import './Filters.css';
 
-export interface FiltersProps {
+interface FiltersProps {
 }
 
-export function Filters(props: FiltersProps) {
+const Filters: React.FunctionComponent<FiltersProps> = (props) => {
   const options = ['Yes', 'No'];
   const distanceValue = 30
 
   return (
     <div className="filters">
-      <p className="title">Find Your Match</p>
       <Radio label="Photo" options={options} />
       <Radio label="In Contact" options={options} />
       <Radio label="Favorite" options={options} />
@@ -22,4 +21,6 @@ export function Filters(props: FiltersProps) {
       <RangePicker label="Distance" min={0} max={400} range={false} defaultValue={distanceValue} unit='km' /> 
     </div>
   );
-}
+};
+
+export default Filters;

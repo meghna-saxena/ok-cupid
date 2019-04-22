@@ -1,6 +1,7 @@
 import * as React from 'react';
-import { List } from '../../common/List';
-import { Filters } from '../../common/Filters';
+import List from '../../common/List';
+import Filters from '../../common/Filters';
+import Header from '../../common/Header';
 import './Home.css';
 
 export interface HomeProps {
@@ -20,10 +21,13 @@ export default class Home extends React.Component<HomeProps, HomeState> {
 
     public render() {
         return (
-            <div className="home-container">
-                <Filters />
-                <List />
-            </div>
+            <>
+                <Header />
+                <div className="home-container">
+                    <Filters />
+                    <List />
+                </div>
+            </>
         );
     }
 }

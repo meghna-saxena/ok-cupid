@@ -1,27 +1,14 @@
 import * as React from 'react';
-import './Card.css';
-import { Star } from '../Star';
+import Star from '../Star';
 import data from '../../../vendors/data.json';
+import './Card.css';
 
-export interface CardProps {
-    // btnText: string,
-    // content: string,
-    // action: Function
+interface CardProps {
     name: string,
-    image: string | undefined
+    image?: string
 }
 
-export function Card(props: CardProps) {
-    // const { btnText, content } = props;
-
-    // const clickHandler = () => {
-    //     props.action();
-    // }
-
-    // const image = data.matches[0].main_photo
-    // const name = data.matches[0].display_name;
-    // console.log('IMG', image)
-
+const Card: React.FunctionComponent<CardProps> = (props) => {
     const { name, image } = props;
 
     return (
@@ -31,10 +18,8 @@ export function Card(props: CardProps) {
                 {name}
             </div>
             <img className="main-profile-img" src={image} />
-            {/* <div className="btn-position">
-                <button className="action-btn">Click</button>
-            </div> */}
         </div>
     );
-}
+};
 
+export default Card;

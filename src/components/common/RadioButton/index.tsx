@@ -1,12 +1,12 @@
 import * as React from 'react';
 import './RadioButton.css';
 
-export interface RadioProps {
+interface RadioProps {
     label: string,
     options: string[],
 }
 
-export function Radio(props: RadioProps) {
+const Radio: React.FunctionComponent<RadioProps> = (props) => {
     const { label, options } = props;
 
     const value = options.map(option => {
@@ -24,11 +24,10 @@ export function Radio(props: RadioProps) {
         <React.Fragment>
             <fieldset className="custom-radio-field">
                 <legend className="custom-legend">{label}</legend>
-                {/* <br /> */}
-                {/* <input name="group1" type="radio" checked />
-                    <span>{bla}</span> */}
                 {value}
             </fieldset>
         </React.Fragment>
     );
 }
+
+export default Radio;
