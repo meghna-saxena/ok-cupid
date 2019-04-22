@@ -1,4 +1,4 @@
-.card {
+.profile-card {
     border: 1px solid #eee;
     box-shadow: 0 1px 1px #ccc;
     width: 200px;
@@ -42,15 +42,17 @@
     border: 0;
   } */
 
-  .main-img { 
+  .main-profile-img { 
     width: 150px;
     height: 120px;
     border: 0;
     /* display: inherit; */
-    padding-top: 20px;
-    margin-top: 40px;
-    left: -140px;
+   
+    /* padding-top: 20px; */
+    /* margin-top: 40px; */
+    /* left: -140px; */
     /* margin-right: 60px; */
+    overflow: hidden;
 }
 
 .favorite-with-name {

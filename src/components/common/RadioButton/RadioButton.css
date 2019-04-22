@@ -1,9 +1,9 @@
-.radio-options {
+.custom-radio-field {
     margin-right: 40px;
     font-size: 12px;
 }
 
-.radio-field {
+.custom-radio-field {
     border: 1px solid #ccc;
     /* margin-top: 30px; */
     width: 300px;
@@ -14,7 +14,7 @@
     margin : 30px auto 0 auto; 
 }
 
-legend {
+.custom-legend {
     display: flex;
     font-size: 14px;
 }

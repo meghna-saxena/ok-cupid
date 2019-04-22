@@ -25,12 +25,12 @@ export function Card(props: CardProps) {
     const { name, image } = props;
 
     return (
-        <div className="card">
+        <div className="profile-card">
             <div className="favorite-with-name">
                 <Star />
                 {name}
             </div>
-            <img className="main-img" src={image} />
+            <img className="main-profile-img" src={image} />
             {/* <div className="btn-position">
                 <button className="action-btn">Click</button>
             </div> */}

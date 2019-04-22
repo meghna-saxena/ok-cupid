@@ -14,7 +14,7 @@ export function Radio(props: RadioProps) {
             <>
                 <label>
                     <input name={label} type="radio" checked />
-                    <span className="radio-options">{option}</span>
+                    <span className="custom-radio-options">{option}</span>
                 </label>
             </>
         )
@@ -22,8 +22,8 @@ export function Radio(props: RadioProps) {
 
     return (
         <React.Fragment>
-            <fieldset className="radio-field">
-                <legend>{label}</legend>
+            <fieldset className="custom-radio-field">
+                <legend className="custom-legend">{label}</legend>
                 {/* <br /> */}
                 {/* <input name="group1" type="radio" checked />
                     <span>{bla}</span> */}

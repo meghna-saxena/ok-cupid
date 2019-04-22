@@ -2,6 +2,7 @@ import * as React from 'react';
 import { Card } from '../Card';
 import './List.css';
 import data from '../../../vendors/data.json';
+import NoPhotoUser from '../../../images/no-photo.png';
 
 export interface ListProps {
 }
@@ -11,12 +12,10 @@ export function List(props: ListProps) {
   // const image = data.matches.filter(el => el)
   const name = data.matches.map(el => {
     const displayName = el.display_name;
-    const img = el.main_photo
+    const img = el.main_photo ? el.main_photo : NoPhotoUser;
+
     return <Card key={displayName} name={displayName} image={img} />
-  }
-
-
-  );
+  });
 
   return (
     <div className="list">
