@@ -1,13 +1,27 @@
-.profile-card {
+/* .profile-card {
     border: 1px solid #eee;
     box-shadow: 0 1px 1px #ccc;
     width: 200px;
     height: 250px;
     padding: 20px;
     /* display: inline-block; */
-    display: inline-block;
+    /* display: inline-block;
     align-content: flex-start;
-    margin: 40px;
+    margin: 30px; 
+  } 
+*/
+
+  .profile-card {
+    border: 1px solid #eee;
+    box-shadow: 0 1px 1px #ccc;
+    width: 300px;
+    height: 350px;
+    padding: 20px;
+    /* display: inline-block; */
+    display: inline-block;
+    -webkit-align-content: flex-start;
+    align-content: flex-start;
+    margin: 20px;
   }
   
   .btn-position {
@@ -43,18 +57,81 @@
   } */
 
   .main-profile-img { 
-    width: 150px;
+    /* width: 150px;
     height: 120px;
-    border: 0;
+    border: 0; */
     /* display: inherit; */
    
     /* padding-top: 20px; */
-    /* margin-top: 40px; */
+    /* margin-top: 20px; */
     /* left: -140px; */
     /* margin-right: 60px; */
-    overflow: hidden;
+    width: 200px;
+    height: 150px;
+    border: 0;
 }
 
-.favorite-with-name {
-  
+.profile-name {
+  font-size: 16px; 
+  font-weight: 300;
+}
+
+
+/* TAGS */
+.tags {
+  list-style: none;
+  margin: 0;
+  overflow: hidden; 
+  padding: 0;
+}
+
+.tags li {
+  float: left; 
+  margin-top: 5px;
+}
+
+.tag {
+  background: #eee;
+  border-radius: 3px 0 0 3px;
+  color: #999;
+  display: inline-block;
+  height: 26px;
+  line-height: 26px;
+  padding: 0 20px 0 23px;
+  position: relative;
+  margin: 0 10px 10px 0;
+  text-decoration: none;
+  -webkit-transition: color 0.2s;
+}
+
+.tag::before {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: inset 0 1px rgba(0, 0, 0, 0.25);
+  content: '';
+  height: 6px;
+  left: 10px;
+  position: absolute;
+  width: 6px;
+  top: 10px;
+}
+
+.tag::after {
+  background: #fff;
+  border-bottom: 13px solid transparent;
+  border-left: 10px solid #eee;
+  border-top: 13px solid transparent;
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.tag:hover {
+  background-color: crimson;
+  color: white;
+}
+
+.tag:hover::after {
+   border-left-color: crimson; 
 }

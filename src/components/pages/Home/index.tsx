@@ -21,13 +21,13 @@ export default class Home extends React.Component<HomeProps, HomeState> {
 
     public render() {
         return (
-            <>
+            <React.Fragment>
                 <Header />
-                <div className="home-container">
+                <div className="content">
                     <Filters />
                     <List />
                 </div>
-            </>
+            </React.Fragment>
         );
     }
 }

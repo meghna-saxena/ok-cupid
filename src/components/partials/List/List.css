@@ -1,8 +1,16 @@
 .list {
-    flex-grow: 1;
+    /* flex-grow: 1; */
     /* background-color: green; */
      /*  width: 100%;  /*TODO */
-     width: 40px;  
+     /* width: 40px;  
+     -webkit-flex-grow: 1; */
+    /* flex-grow: 1; */
+    /* background-color: green; */
+    /* width: 20px; */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+   margin: 20px;
 }
 
 /* @media only screen and (max-width: 769px) { 
