@@ -1,0 +1,20 @@
+.radio-options {
+    margin-right: 40px;
+    font-size: 12px;
+}
+
+.radio-field {
+    border: 1px solid #ccc;
+    /* margin-top: 30px; */
+    width: 300px;
+    /* margin: 0 auto; */
+    /* display: flex; */
+    /* justify-content: center; */
+    /* align-items: center; */
+    margin : 30px auto 0 auto; 
+}
+
+legend {
+    display: flex;
+    font-size: 14px;
+}
