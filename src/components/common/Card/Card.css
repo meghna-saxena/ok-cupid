@@ -4,8 +4,10 @@
     width: 200px;
     height: 250px;
     padding: 20px;
+    /* display: inline-block; */
     display: inline-block;
-    margin: 10px;
+    align-content: flex-start;
+    margin: 40px;
   }
   
   .btn-position {
@@ -34,8 +36,23 @@
     background-color: rgb(238, 123, 108);
   }
 
-  .main-img {
+  /* .main-img {
     width: 200px;
     height: 180px;
     border: 0;
-  }
+  } */
+
+  .main-img { 
+    width: 150px;
+    height: 120px;
+    border: 0;
+    /* display: inherit; */
+    padding-top: 20px;
+    margin-top: 40px;
+    left: -140px;
+    /* margin-right: 60px; */
+}
+
+.favorite-with-name {
+  
+}

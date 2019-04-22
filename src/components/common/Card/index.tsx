@@ -7,6 +7,8 @@ export interface CardProps {
     // btnText: string,
     // content: string,
     // action: Function
+    name: string,
+    image: string | undefined
 }
 
 export function Card(props: CardProps) {
@@ -16,13 +18,18 @@ export function Card(props: CardProps) {
     //     props.action();
     // }
 
-    const image = data.matches[0].main_photo
+    // const image = data.matches[0].main_photo
+    // const name = data.matches[0].display_name;
+    // console.log('IMG', image)
 
-    console.log('IMG', image)
+    const { name, image } = props;
+
     return (
         <div className="card">
-            <Star />
-            {/* Here is a text. */}
+            <div className="favorite-with-name">
+                <Star />
+                {name}
+            </div>
             <img className="main-img" src={image} />
             {/* <div className="btn-position">
                 <button className="action-btn">Click</button>
