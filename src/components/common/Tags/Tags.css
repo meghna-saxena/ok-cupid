@@ -1,0 +1,6 @@
+.score-label {
+    width: 40px;
+    background-color: rgb(241, 68, 68);
+    color: rgb(255, 251, 251);
+    border-radius: 50px;
+}

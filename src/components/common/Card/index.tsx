@@ -1,5 +1,6 @@
 import * as React from 'react';
 import Star from '../Star';
+import Tags from '../Tags';
 import data from '../../../vendors/data.json';
 import './Card.css';
 
@@ -11,14 +12,16 @@ interface CardProps {
     city?: string,
     religion?: string,
     favorite: boolean,
+    score: number,
 }
 
 const Card: React.FunctionComponent<CardProps> = (props) => {
-    const { name, image, job, age, city, religion, favorite } = props;
+    const { name, image, job, age, city, religion, favorite, score } = props;
 
     return (
         <div className="profile-card">
             <Star favorite={favorite} />
+            <Tags score={score} />
             <span className="profile-name">{name}</span>
             <div className="profile-name">{job}</div>
             <img className="main-profile-img" src={image} />

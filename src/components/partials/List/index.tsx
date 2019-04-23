@@ -16,6 +16,7 @@ const List: React.FunctionComponent<ListProps> = (props) => {
     const city = el.city.name;
     const religion = el.religion;
     const favorite = el.favourite;
+    const score = el.compatibility_score * 100; /* converting in percentage */
 
     return <Card
       key={displayName}
@@ -25,6 +26,7 @@ const List: React.FunctionComponent<ListProps> = (props) => {
       city={city}
       religion={religion}
       favorite={favorite}
+      score={score}
     />
   });
 
