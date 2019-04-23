@@ -42,7 +42,7 @@ export default class RangePicker extends React.Component<RangePickerProps, Range
         return (
             <fieldset className="custom-radio-field">
                 <legend className="custom-legend">{label}</legend>
-                <Slider min={min} max={max} range={range} defaultValue={defaultValue} disabled={disabled} tipFormatter={this.formatter} />
+                <Slider className="custom-slider" min={min} max={max} range={range} defaultValue={defaultValue} disabled={disabled} tipFormatter={this.formatter} />
             </fieldset>
         );
     }

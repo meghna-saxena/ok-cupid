@@ -1,3 +1,7 @@
-ant-slider-handle {
+.custom-slider.ant-slider {
+    
+}
+
+ant-slider-step {
     background-color: black;
 }

@@ -18,3 +18,10 @@
     display: flex;
     font-size: 14px;
 }
+
+[type="radio"]:checked+span:after {
+    -webkit-transform: scale(1.02);
+    transform: scale(1.02);
+    color: black;
+    background-color: yellow;
+}
