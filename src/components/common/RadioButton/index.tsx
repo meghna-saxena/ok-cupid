@@ -11,12 +11,12 @@ const Radio: React.FunctionComponent<RadioProps> = (props) => {
 
     const value = options.map(option => {
         return (
-            <>
-                <label>
-                    <input name={label} type="radio" checked />
+            // <>
+                <label key={option}>
+                    <input name={label} type="radio" />
                     <span className="custom-radio-options">{option}</span>
                 </label>
-            </>
+            // </>
         )
     })
 

@@ -2,13 +2,15 @@ import * as React from 'react';
 import Card from '../../common/Card';
 import NoPhotoUser from '../../../images/no-photo.png';
 import './List.css';
-import data from '../../../vendors/data.json';
 
 interface ListProps {
+  users: any
 }
 
 const List: React.FunctionComponent<ListProps> = (props) => {
-  const list = data.matches.map(el => {
+  const { users } = props;
+
+  const list = users.map((el: any) => {
     const displayName = el.display_name;
     const img = el.main_photo ? el.main_photo : NoPhotoUser;
     const occupation = el.job_title;
@@ -17,9 +19,10 @@ const List: React.FunctionComponent<ListProps> = (props) => {
     const religion = el.religion;
     const favorite = el.favourite;
     const score = el.compatibility_score * 100; /* converting in percentage */
+    const id = el.id;
 
     return <Card
-      key={displayName}
+      key={id}
       name={displayName}
       image={img} job={occupation}
       age={age}

@@ -4,7 +4,8 @@
     font-family: 'Raleway', sans-serif;
     font-weight: 400;
     font-size: 34px;
-    background-color: #e74c3c;
+    /* background-color: #e74c3c; */
+    background-image: linear-gradient(to right, #159957, #155799);
     color: rgb(238, 232, 232);
     /* margin: 0; */
     padding: 5px;
