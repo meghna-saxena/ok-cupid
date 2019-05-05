@@ -11,6 +11,7 @@ const List: React.FunctionComponent<ListProps> = (props) => {
   const { users } = props;
 
   const list = users.map((el: any) => {
+    const id = el.id;
     const displayName = el.display_name;
     const img = el.main_photo ? el.main_photo : NoPhotoUser;
     const occupation = el.job_title;
@@ -19,7 +20,6 @@ const List: React.FunctionComponent<ListProps> = (props) => {
     const religion = el.religion;
     const favorite = el.favourite;
     const score = el.compatibility_score * 100; /* converting in percentage */
-    const id = el.id;
 
     return <Card
       key={id}
