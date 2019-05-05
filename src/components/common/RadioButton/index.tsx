@@ -15,9 +15,7 @@ const Radio: React.FunctionComponent<RadioProps> = (props) => {
         const { changed } = props;
         const value = e.target.value;
 
-
-        changed(value, null);
-
+        changed(value);
     }
 
     const value = options.map(option => {

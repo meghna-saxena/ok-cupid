@@ -24,28 +24,26 @@ export default class Home extends React.Component<HomeProps, HomeState> {
         }
     }
 
-    public componentDidMount() {
-        axios.get('http://localhost:8080/api/users')
-            .then(response => {
-                this.setState({ users: response.data.users })
-            });
+    public async componentDidMount() {
+        const response = await axios.get('http://localhost:8080/api/users')
+        this.setState({ users: response.data.users })
     }
 
-    private handleChange = (value: string, term: string) => {
+    private handleChange = (value: any, term: string) => {
         console.log('VALUE', value)
         console.log('TERM', term)
 
-        if (term === 'photo' && value === 'Yes') {
-            const withPhoto = this.state.users.filter((el: any) => {
-                return el.main_photo
-            });
-            this.setState({ filteredUsers: withPhoto })
-        } else if (term === 'photo' && value === 'No') {
-            const withoutPhoto = this.state.users.filter((el: any) => {
-                return el.main_photo == undefined
-            });
-            this.setState({ filteredUsers: withoutPhoto })
-        }
+        // if (term === 'photo' && value === 'Yes') {
+        //     const withPhoto = this.state.users.filter((el: any) => {
+        //         return el.main_photo
+        //     });
+        //     this.setState({ filteredUsers: withPhoto })
+        // } else if (term === 'photo' && value === 'No') {
+        //     const withoutPhoto = this.state.users.filter((el: any) => {
+        //         return el.main_photo == undefined
+        //     });
+        //     this.setState({ filteredUsers: withoutPhoto })
+        // }
     }
 
     public render() {

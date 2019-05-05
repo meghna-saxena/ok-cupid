@@ -10,6 +10,7 @@ export interface RangePickerProps {
     range: boolean,
     min?: number,
     max?: number,
+    changed: Function
 }
 
 export interface RangePickerState {
@@ -25,14 +26,25 @@ export default class RangePicker extends React.Component<RangePickerProps, Range
         }
     }
 
-    handleDisabledChange = (disabled: any) => {
+    private handleDisabledChange = (disabled: boolean) => {
         this.setState({ disabled });
     }
 
-    formatter = (value: number) => {
+    private formatter = (value: number) => {
         const { unit } = this.props;
 
         return `${value}${unit}`;
+    }
+
+    private handleChange = (e: any) => {
+        const { changed } = this.props;
+
+        console.log('PROPSSSS', this.props)
+        const min = e[0];
+        const max = e[1];
+
+        // changed(min, max);
+         changed(e);
     }
 
     public render() {
@@ -42,7 +54,7 @@ export default class RangePicker extends React.Component<RangePickerProps, Range
         return (
             <fieldset className="custom-radio-field">
                 <legend className="custom-legend">{label}</legend>
-                <Slider className="custom-slider" min={min} max={max} range={range} defaultValue={defaultValue} disabled={disabled} tipFormatter={this.formatter} />
+                <Slider className="custom-slider" min={min} max={max} range={range} defaultValue={defaultValue} disabled={disabled} tipFormatter={this.formatter} onChange={this.handleChange} />
             </fieldset>
         );
     }
