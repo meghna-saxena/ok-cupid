@@ -1,6 +1,5 @@
 import * as React from 'react';
 import './RadioButton.css';
-import data from '../../../vendors/data.json';
 
 interface RadioProps {
     label: string,
@@ -9,11 +8,11 @@ interface RadioProps {
 }
 
 const Radio: React.FunctionComponent<RadioProps> = (props) => {
-    const { label, options, changed } = props;
+    const { label, options } = props;
 
-    const handleChange = (e: any) => {
+    const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         const { changed } = props;
-        const value = e.target.value;
+        const value = event.target.value;
 
         changed(value);
     }
@@ -21,9 +20,6 @@ const Radio: React.FunctionComponent<RadioProps> = (props) => {
     const value = options.map(option => {
         return (
             <label key={option}>
-                {/* <input name={label}  type="radio" />
-                    <span className="custom-radio-options">{option}</span> */}
-
                 <input name={label} value={option} type="radio" onChange={handleChange} />
                 <span className="custom-radio-options">{option}</span>
             </label>

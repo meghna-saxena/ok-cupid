@@ -1,24 +1,49 @@
 import * as React from 'react';
+import axios from 'axios';
 import List from '../../partials/List';
 import Filters from '../../partials/Filters';
 import Header from '../../common/Header';
-import data from '../../../vendors/data.json';
 import './Home.css';
-import axios from 'axios';
+
+interface IFilterObject {
+    photo: string,
+    contact: string,
+    favorite: string,
+    score: string,
+    age: string,
+    height: string,
+    distance: string,
+}
+
+interface City {
+    name: string
+}
 
 interface User {
-
+    age: number,
+    city: City,
+    compatibility_score: number,
+    contacts_exchanged: number,
+    display_name: string,
+    favourite: boolean,
+    height_in_cm: number,
+    id: number,
+    job_title: string,
+    main_photo?: string,
+    religion: string
 }
 
 interface IState {
-    users: Array<any>,
-    filteredUsers: Array<any>
+    users: Array<User>,
+    filteredUsers: Array<User>,
+    filters: any
 }
 
 export default class Home extends React.Component<{}, IState> {
     state = {
         users: [],
-        filteredUsers: []
+        filteredUsers: [],
+        filters: {}
     }
 
     public async componentDidMount() {
@@ -26,50 +51,57 @@ export default class Home extends React.Component<{}, IState> {
         this.setState({ users: response.data.users })
     }
 
-    private handleChange = (value: any, term: string) => {
-        console.log('VALUE', value)
-        console.log('TERM', term)
+    private handleFilterChange = (value: any, term: string) => {
 
-        // if (term === 'photo' && value === 'Yes') {
-        //     const withPhoto = this.state.users.filter((el: any) => {
-        //         return el.main_photo
-        //     });
-        //     this.setState({ filteredUsers: withPhoto })
-        // } else if (term === 'photo' && value === 'No') {
-        //     const withoutPhoto = this.state.users.filter((el: any) => {
-        //         return el.main_photo == undefined
-        //     });
-        //     this.setState({ filteredUsers: withoutPhoto })
-        // }
+        const filteredOption = typeof value !== 'string' ? { min: value[0], max: value[1] } : value
 
-        axios.post('http://localhost:8080/api/users/search', {
-            term: 'Fred',
-        })
-            .then(response => {
-                console.log(response);
-            })
-            .catch(error => {
-                console.log(error);
-            });
+        this.setState({ filters: { ...this.state.filters, [term]: filteredOption } })
     }
 
+    private async handleSearch() {
+        const { filters } = this.state;
+
+        const response = await axios.post('http://localhost:8080/api/users/filter', {
+            ...filters
+        })
+
+        this.setState({ filteredUsers: response.data.users })
+    }
+
+    // axios.post('http://localhost:8080/api/users/filter', {
+    //     ...filters
+    // })
+    //     .then(response => {
+    //         this.setState({ filteredUsers: response.data.users })
+    //     })
+    //     .catch(error => {
+    //         console.log(error);
+    //     });
+    // }
+
     public render() {
+        console.log('pleassssee work', this.state.filters)
         const { users, filteredUsers } = this.state;
+        let userName = '';
+        let userCity = '';
 
-        console.log('USERS', users);
+        if (users && users.length > 1) {
+            const user: User = users[Math.floor(Math.random() * users.length)];
 
-        const user = data.matches[Math.floor(Math.random() * data.matches.length)];
+            userName = user.display_name
+            userCity = user.city.name
+        }
 
-        // const user = users[Math.floor(Math.random()*users.length)];
-        const { display_name: userName, city: { name: userCity } } = user;
+        // const user: any = users && users[Math.floor(Math.random() * users.length)];
+        // const { display_name: userName, city: { name: userCity } } = user;
 
-        const userProfiles = (filteredUsers && filteredUsers.length > 1) ? filteredUsers : users;
+        const userProfiles = (filteredUsers && filteredUsers.length >= 1) ? filteredUsers : users;
 
         return (
             <React.Fragment>
                 <Header user={userName} city={userCity} />
                 <div className="content">
-                    <Filters changed={this.handleChange} />
+                    <Filters changed={this.handleFilterChange} searched={this.handleSearch.bind(this)} />
                     <List users={userProfiles} />
                 </div>
             </React.Fragment>

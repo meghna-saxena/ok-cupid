@@ -4,7 +4,7 @@ import Tags from '../Tags';
 import './Card.css';
 
 interface CardProps {
-    name: string,
+    name: string,   
     image?: string,
     job: string,
     age: number,
@@ -12,10 +12,11 @@ interface CardProps {
     religion: string,
     favorite: boolean,
     score: number,
+    contacts: number
 }
 
 const Card: React.FunctionComponent<CardProps> = (props) => {
-    const { name, image, job, age, city, religion, favorite, score } = props;
+    const { name, image, job, age, city, religion, favorite, score, contacts } = props;
 
     return (
         <div className="profile-card">
@@ -28,6 +29,7 @@ const Card: React.FunctionComponent<CardProps> = (props) => {
                 <li className="tag">{city}</li>
                 <li className="tag">{age} y/o</li>
                 <li className="tag">{religion}</li>
+                <li className="tag">Contacts: {contacts}</li>
             </ul>
         </div>
     );
