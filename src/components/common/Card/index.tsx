@@ -8,8 +8,8 @@ interface CardProps {
     image?: string,
     job: string,
     age: number,
-    city?: string,
-    religion?: string,
+    city: string,
+    religion: string,
     favorite: boolean,
     score: number,
 }

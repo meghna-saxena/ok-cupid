@@ -6,22 +6,19 @@ import data from '../../../vendors/data.json';
 import './Home.css';
 import axios from 'axios';
 
-export interface HomeProps {
+interface User {
+
 }
 
-export interface HomeState {
-    users: any,
-    filteredUsers: any
+interface IState {
+    users: Array<any>,
+    filteredUsers: Array<any>
 }
 
-export default class Home extends React.Component<HomeProps, HomeState> {
-    constructor(props: HomeProps) {
-        super(props);
-
-        this.state = {
-            users: [],
-            filteredUsers: []
-        }
+export default class Home extends React.Component<{}, IState> {
+    state = {
+        users: [],
+        filteredUsers: []
     }
 
     public async componentDidMount() {
@@ -44,20 +41,36 @@ export default class Home extends React.Component<HomeProps, HomeState> {
         //     });
         //     this.setState({ filteredUsers: withoutPhoto })
         // }
+
+        axios.post('http://localhost:8080/api/users/search', {
+            term: 'Fred',
+        })
+            .then(response => {
+                console.log(response);
+            })
+            .catch(error => {
+                console.log(error);
+            });
     }
 
     public render() {
         const { users, filteredUsers } = this.state;
 
+        console.log('USERS', users);
+
         const user = data.matches[Math.floor(Math.random() * data.matches.length)];
+
+        // const user = users[Math.floor(Math.random()*users.length)];
         const { display_name: userName, city: { name: userCity } } = user;
+
+        const userProfiles = (filteredUsers && filteredUsers.length > 1) ? filteredUsers : users;
 
         return (
             <React.Fragment>
                 <Header user={userName} city={userCity} />
                 <div className="content">
                     <Filters changed={this.handleChange} />
-                    <List users={(filteredUsers && filteredUsers.length > 1) ? filteredUsers : users} />
+                    <List users={userProfiles} />
                 </div>
             </React.Fragment>
         );

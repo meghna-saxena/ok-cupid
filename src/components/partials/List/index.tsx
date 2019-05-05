@@ -10,16 +10,16 @@ interface ListProps {
 const List: React.FunctionComponent<ListProps> = (props) => {
   const { users } = props;
 
-  const list = users.map((el: any) => {
-    const id = el.id;
-    const displayName = el.display_name;
-    const img = el.main_photo ? el.main_photo : NoPhotoUser;
-    const occupation = el.job_title;
-    const age = el.age;
-    const city = el.city.name;
-    const religion = el.religion;
-    const favorite = el.favourite;
-    const score = el.compatibility_score * 100; /* converting in percentage */
+  const list = users.map((user: any) => {
+    const id = user.id;
+    const displayName = user.display_name;
+    const img = user.main_photo ? user.main_photo : NoPhotoUser;
+    const occupation = user.job_title;
+    const age = user.age;
+    const city = user.city.name;
+    const religion = user.religion;
+    const favorite = user.favourite;
+    const score = user.compatibility_score * 100; /* converting in percentage */
 
     return <Card
       key={id}
