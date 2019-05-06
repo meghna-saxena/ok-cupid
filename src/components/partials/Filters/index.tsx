@@ -43,15 +43,7 @@ const Filters: React.FunctionComponent<FiltersProps> = (props) => {
 
       return search[term];
   }
-
-  // private handleChange = (value: any, term: string) => {
-  //     console.log('VALUE', value, 'TERM', term)
-
-  //     const searchQuery = this.getFilterName(term);
-
-  //     console.log('searchQuery', searchQuery)
-
-
+  
   const handleSearch = () => {
     console.log('heree')
     const { searched } = props;

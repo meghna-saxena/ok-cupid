@@ -68,17 +68,6 @@ export default class Home extends React.Component<{}, IState> {
         this.setState({ filteredUsers: response.data.users })
     }
 
-    // axios.post('http://localhost:8080/api/users/filter', {
-    //     ...filters
-    // })
-    //     .then(response => {
-    //         this.setState({ filteredUsers: response.data.users })
-    //     })
-    //     .catch(error => {
-    //         console.log(error);
-    //     });
-    // }
-
     public render() {
         console.log('pleassssee work', this.state.filters)
         const { users, filteredUsers } = this.state;
