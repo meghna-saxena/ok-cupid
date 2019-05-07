@@ -1,1 +1,3 @@
-# Tinder
+# OK Cupid
+
+A dating app.
