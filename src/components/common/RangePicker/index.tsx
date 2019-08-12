@@ -22,7 +22,7 @@ const RangePicker: React.FunctionComponent<RangePickerProps> = (props) => {
     const handleChange = (values: any): void => {
         const { changed } = props;
 
-        console.log('RangePicker', values)
+        // console.log('RangePicker', values)
         // const min = values[0];
         // const max = values[1];
 
